@@ -1,5 +1,5 @@
 function showDiv() {
-    document.getElementById("main").style.display = "inherit";
+    document.getElementById("main").style.display = "grid";
 }
 
 var apiId = 'a85d2123b5271bca849dc751e64a2b42';
@@ -48,6 +48,7 @@ function init(dataSet) {
     let temperatureElement = document.getElementById('temperature');
     let humidityElement = document.getElementById('humidity');
     let windSpeedElement = document.getElementById('windSpeed');
+    let pressureElement = document.getElementById('pressure');
 
     let weatherIcon = document.getElementById('weatherIcon');
     weatherIcon.src = 'https://openweathermap.org/img/w/' + dataSet.weather[0].icon + '.png';
@@ -55,11 +56,12 @@ function init(dataSet) {
     let resultsDescription = dataSet.weather[0].description;
     weatherType.innerHTML = resultsDescription.charAt(0).toUpperCase() + resultsDescription.slice(1);
 
-
-    temperatureElement.innerHTML = "<img src='icons/temp.png'/>" + Math.floor(dataSet.main.temp) + '&#176C';
-    windSpeedElement.innerHTML = "<img src='icons/wind.png'/>" + Math.floor(dataSet.wind.speed) + ' m/s';
     cityName.innerHTML = dataSet.name;
+    temperatureElement.innerHTML = Math.floor(dataSet.main.temp) + '&#176C';
+    windSpeedElement.innerHTML = "<img src='icons/wind.png'/>" + Math.floor(dataSet.wind.speed) + ' m/s';
     humidityElement.innerHTML = "<img src='icons/humidity.png'/>" + Math.floor(dataSet.main.humidity) + ' %';
+    pressureElement.innerHTML = Math.floor(dataSet.main.pressure) + ' hPa';
+    
 
 
 

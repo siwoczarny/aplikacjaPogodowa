@@ -15,23 +15,16 @@
 
 <body>
     <header id="header">
-        <h1>WheatherApp</h1>
+        <h1 id="cityName">WheatherApp</h1>
     </header>
     <section class="main" id="main">
-        <div class="info">
-            <div id="country"></div>
-            <div id="cityName"></div>
-            <div id="date"></div>
-            <div id="week-day"></div>
-        </div>
-        <div class="data">
-            <div id="temperature"></div>
+        <!-- Weather data -->
             <div id="windSpeed"></div>
             <div id="humidity"></div>
-        </div>
-        <div class="weather">
-            <div id="weatherType"></div>
+            <div id="pressure"></div>
+            <div id="temperature"></div>
             <img id="weatherIcon">
+            <div id="weatherType"></div>
         </div>
     </section>
     <section class="search-bar">
@@ -40,7 +33,7 @@
         <div class="search-text">
             <input id="city" type="text" name="location" placeholder="Podaj swoją lokalizację">
         </div>
-        <button type="button" id="searchBtn">Szukaj</button>
+        <button type="button" class="button" id="searchBtn">Szukaj</button>
     </section>
 
 
