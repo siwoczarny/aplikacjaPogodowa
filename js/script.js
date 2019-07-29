@@ -15,7 +15,7 @@ function searchWeather(city) {
     })
 }
 
-// Funkcja do obrabiania danych
+// Funkcja do obrabiania danych zmieniając tło
 function init(dataSet) {
     switch (dataSet.weather[0].main) {
         case 'Clouds':
@@ -51,7 +51,7 @@ function init(dataSet) {
     let pressureElement = document.getElementById('pressure');
 
     let weatherIcon = document.getElementById('weatherIcon');
-    weatherIcon.src = 'https://openweathermap.org/img/w/' + dataSet.weather[0].icon + '.png';
+    weatherIcon.src = 'https://openweathermap.org/img/wn/' + dataSet.weather[0].icon + '.png';
     
     let resultsDescription = dataSet.weather[0].description;
     weatherType.innerHTML = resultsDescription.charAt(0).toUpperCase() + resultsDescription.slice(1);
@@ -60,11 +60,8 @@ function init(dataSet) {
     temperatureElement.innerHTML = Math.floor(dataSet.main.temp) + '&#176C';
     windSpeedElement.innerHTML = "<img src='icons/wind.png'/>" + Math.floor(dataSet.wind.speed) + ' m/s';
     humidityElement.innerHTML = "<img src='icons/humidity.png'/>" + Math.floor(dataSet.main.humidity) + ' %';
-    pressureElement.innerHTML = Math.floor(dataSet.main.pressure) + ' hPa';
+    pressureElement.innerHTML = "<img src='icons/pressure.png'/>" + Math.floor(dataSet.main.pressure) + ' hPa';
     
-
-
-
     console.log(dataSet.weather[0].main);                                     // stan pogody
     console.log(dataSet.main.temp + " " + String.fromCharCode(176) + "C");  // temperatura w stopniach C
     console.log(dataSet);
