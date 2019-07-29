@@ -11,6 +11,7 @@ body {
     grid-row-gap: 0;
     width: 100%;
     grid-auto-rows: minmax(50px, auto);
+    grid-auto-columns: minmax(100px, auto);
     justify-content: center;
     background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
@@ -19,7 +20,7 @@ body {
 /* Header */
 
 #cityName {
-    font-size: 64px;
+    font-size: 56px;
 }
 
 /* Main */
@@ -86,17 +87,6 @@ body {
     margin-bottom: 32px;
 }
 
-.search-bar hr {
-    width: 100px;
-    border-color: #ffffff;
-    padding: 8px 0;
-    transition: .2s;
-}
-
-.search-bar hr:hover {
-    width: 72px;
-}
-
 .search-text input {
     cursor: pointer;
     background: #ffffff;
@@ -107,6 +97,18 @@ body {
     padding-left: 1rem;
     outline: none;
     font-size: 16px;
+    text-align: left;
+}
+
+.search-text ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: #343434;
+    background: #ffffff;
+}
+
+.search-text li {
+    padding-left: 1rem;
     text-align: left;
 }
 

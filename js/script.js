@@ -9,7 +9,61 @@ var apiId = 'a85d2123b5271bca849dc751e64a2b42';
 var units = 'metric';
 var searchMethod = 'q';
 
-// Funkcja wysylajaca zapytanie o dane pogodowe za pomoca naszego api na podany "url,
+// Podpowiedzi przy wpisywaniu miasta w pole wyszukiwania
+var wrapper = document.querySelector('.search-bar'),
+    input = wrapper.querySelector('input'),
+    list,
+    predefinedValues;
+
+predefinedValues = [
+    "Wrocław",
+    "Warszawa",
+    "Zielona Góra",
+    "Szczecin",
+    "Białystok",
+    "Kraków",
+    "Katowice",
+    "Rzeszów"
+];
+
+var createList = function (values) {
+    if (list) {
+        wrapper.removeChild(list);
+    }
+
+    var ul = document.createElement('ul');
+
+    values.forEach(function (value) {
+        var li = document.createElement('li');
+        li.textContent = value;
+        ul.appendChild(li);
+    });
+
+    return ul;
+};
+
+var manageList = function (string) {
+    var showedValues = predefinedValues.filter(function (value) {
+        return value.indexOf(string) == 0;
+    });
+
+    if (showedValues.lenght) {
+        list = createList(showedValues);
+        wrapper.appendChild(list);
+    } else if (list != null) {
+        wrapper.removeChild(list);
+        list = null;
+    }
+};
+
+var onType = function () {
+    manageList(this.value);
+};
+
+input.addEventListener('keyup', onType);
+
+
+// Funkcja wysylajaca zapytanie o dane pogodowe za pomoca naszego api na podany url,
 function searchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${city}&APPID=${apiId}&units=${units}&lang=pl`).then(result => {
         return result.json();
