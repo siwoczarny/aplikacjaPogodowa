@@ -1,5 +1,8 @@
 function showDiv() {
-    document.getElementById("main").style.display = "grid";
+    if (document.getElementById("main").classList = "main")
+        document.getElementById("main").classList.toggle("active");
+    else
+        document.getElementById("main").classList.toggle("active");
 }
 
 var apiId = 'a85d2123b5271bca849dc751e64a2b42';
@@ -17,27 +20,37 @@ function searchWeather(city) {
 
 // Funkcja do obrabiania danych zmieniając tło
 function init(dataSet) {
+    var height = window.innerHeight;
+
     switch (dataSet.weather[0].main) {
         case 'Clouds':
             document.body.style.backgroundImage = "url('images/clouds.jpg')";
+            document.body.style.height = height;
             break;
 
         case 'Clear':
             document.body.style.backgroundImage = "url('images/clear.jpg')";
+            document.body.style.height = height;
             break;
 
         case 'Rain':
+            document.body.style.backgroundImage = "url('images/rain.jpg')";
+            document.body.style.height = height;
+            break;
         case 'Drizzle':
         case 'Mist':
-            document.body.style.backgroundImage = "url('images/rain.jpg')";
+            document.body.style.backgroundImage = "url('images/mist.jpg')";
+            document.body.style.height = height;
             break;
 
         case 'Thunderstorm':
             document.body.style.backgroundImage = "url('images/thunderstorm.jpg')";
+            document.body.style.height = height;
             break;
 
         case 'Snow':
             document.body.style.backgroundImage = "url('images/snow.jpg')";
+            document.body.style.height = height;
             break;
 
         default:

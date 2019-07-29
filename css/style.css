@@ -3,28 +3,40 @@
 * {
     font-family: 'Thasadith', sans-serif;
     text-align: center;
+    color: white;
 }
 
 body {
     display: grid;
-    grid-gap: 16px;
-    grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 0;
+    grid-auto-rows: minmax(200px, auto);
     justify-content: center;
+    background-image: linear-gradient(to top left, lightskyblue, cornflowerblue);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Header */
 
-header {
-    padding: 24px;
+#cityName {
+    font-size: 64px;
+    padding-top: 25%;
 }
 
 /* Main */
 
 .main {
     display: none;
+    opacity: 0;
+}
+
+.main.active {
+    display: grid;
+    visibility: inherit;
+    opacity: 1;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    transition: .3s;
+    transition: all 1s;
 }
 
 #windSpeed {
@@ -44,6 +56,7 @@ header {
 #windSpeed img, #humidity img, #pressure img {
     height: 40px;
     width: auto;
+    filter: invert(100%);
 }
 
 #temperature {
@@ -70,13 +83,18 @@ header {
 
 /* Search bar */
 
-.serarch-bar hr {
-    width: 24px;
+.search-bar {
+    margin-bottom: 32px;
+}
+
+.search-bar hr {
+    width: 100px;
 }
 
 .search-text input {
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: #ffffff;
+    border: 1px solid #343434;
+    color: #343434;
     border-radius: 10px;
     width: 100%;
     padding-left: 1rem;
@@ -91,10 +109,10 @@ header {
 
 .button {
     font-size: 1rem;
-    background: #343434;
-    border: 1px solid #ffffff;
+    background: #ffffff;
+    border: 1px solid #343434;
     border-radius: 10px;
-    color: #FFFFFF;
+    color: #343434;
     height: 40px;
     width: 100px;
     outline: none;
