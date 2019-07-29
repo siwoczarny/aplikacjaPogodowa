@@ -9,10 +9,10 @@
 body {
     display: grid;
     grid-row-gap: 0;
-    grid-auto-rows: minmax(200px, auto);
+    width: 100%;
+    grid-auto-rows: minmax(50px, auto);
     justify-content: center;
-    background-image: linear-gradient(to top left, lightskyblue, cornflowerblue);
-    background-size: cover;
+    background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
 }
 
@@ -20,13 +20,14 @@ body {
 
 #cityName {
     font-size: 64px;
-    padding-top: 25%;
+    padding-top: 24px;
 }
 
 /* Main */
 
 .main {
-    display: none;
+    display: grid;
+    visibility: hidden;
     opacity: 0;
 }
 
@@ -36,7 +37,7 @@ body {
     opacity: 1;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    transition: all 1s;
+    transition: all 2s;
 }
 
 #windSpeed {
@@ -89,11 +90,19 @@ body {
 
 .search-bar hr {
     width: 100px;
+    border-color: #ffffff;
+    padding: 8px 0;
+    transition: .2s;
+}
+
+.search-bar hr:hover {
+    width: 72px;
 }
 
 .search-text input {
+    cursor: pointer;
     background: #ffffff;
-    border: 1px solid #343434;
+    border: 1px solid whitesmoke;
     color: #343434;
     border-radius: 10px;
     width: 100%;
@@ -110,7 +119,7 @@ body {
 .button {
     font-size: 1rem;
     background: #ffffff;
-    border: 1px solid #343434;
+    border: 1px solid whitesmoke;
     border-radius: 10px;
     color: #343434;
     height: 40px;
