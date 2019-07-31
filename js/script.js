@@ -1,8 +1,9 @@
 function showDiv() {
-    if (document.getElementById("main").classList = "main")
+    if (document.getElementById("main").classList = "main") {
         document.getElementById("main").classList.toggle("active");
-    else
+    } else {
         document.getElementById("main").classList.toggle("active");
+    };
 };
 
 var apiId = 'a85d2123b5271bca849dc751e64a2b42';
