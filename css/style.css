@@ -9,7 +9,8 @@
 body {
     display: grid;
     grid-row-gap: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     grid-auto-rows: minmax(50px, auto);
     grid-auto-columns: minmax(100px, auto);
     justify-content: center;
@@ -103,13 +104,14 @@ body {
 .search-text ul {
     list-style-type: none;
     padding-left: 0;
-    color: #343434;
-    background: #ffffff;
 }
 
 .search-text li {
+    cursor: pointer;
     padding-left: 1rem;
     text-align: left;
+    color: #343434;
+    background: #ffffff;
 }
 
 .search-title, .search-text {
