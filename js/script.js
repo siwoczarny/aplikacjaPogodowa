@@ -1,15 +1,17 @@
 function showDiv() {
-    if (document.getElementById("main").classList = "main")
+    if (document.getElementById("main").classList = "main") {
         document.getElementById("main").classList.toggle("active");
-    else
+    } else {
         document.getElementById("main").classList.toggle("active");
+    };
 };
 
 var apiId = 'a85d2123b5271bca849dc751e64a2b42';
 var units = 'metric';
 var searchMethod = 'q';
 
-// Funkcja wysylajaca zapytanie o dane pogodowe za pomoca naszego api na podany "url,
+
+// Funkcja wysylajaca zapytanie o dane pogodowe za pomoca naszego api na podany url,
 function searchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${city}&APPID=${apiId}&units=${units}&lang=pl`).then(result => {
         return result.json();
