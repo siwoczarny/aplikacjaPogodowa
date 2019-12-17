@@ -10,17 +10,19 @@ body {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 90vh;
-    justify-content: space-around;
+    height: 100vh;
+    justify-content: space;
     background-image: url('../images/bg.jpg');
-    background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     transition: .5s;
 }
 
 /* Header */
 
 #cityName {
+    margin: 24px 0;
     font-size: 56px;
 }
 
@@ -73,14 +75,14 @@ body {
 /* Search bar */
 
 .search-bar hr {
-    width: 100px;
+    width: 50%;
     border-color: #ffffff;
     padding: 8px;
     transition: .2s;
 }
 
 .search-bar hr:hover {
-    width: 72px;
+    width: 60%;
 }
 
 .search-title {
@@ -113,5 +115,9 @@ body {
     color: #343434;
     height: 40px;
     width: 100px;
+    outline: none;
+}
+
+.button:focus {
     outline: none;
 }

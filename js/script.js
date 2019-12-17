@@ -6,7 +6,7 @@ function showDiv() {
     };
 };
 
-var apiId = 'a85d2123b5271bca849dc751e64a2b42';
+var apiId = 'a67f1322578aaa1a1bbea6ca22e0f941';
 var units = 'metric';
 var searchMethod = 'q';
 
@@ -15,7 +15,8 @@ var searchMethod = 'q';
 function searchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${city}&APPID=${apiId}&units=${units}&lang=pl`).then(result => {
         return result.json();
-    }).then(result => {
+    })
+    .then(result => {
         init(result);
     })
 };
@@ -63,7 +64,7 @@ function init(dataSet) {
     let resultsDescription = dataSet.weather[0].description;
     weatherType.innerHTML = resultsDescription.charAt(0).toUpperCase() + resultsDescription.slice(1);
 
-    cityName.innerHTML = dataSet.name;
+    cityName.innerHTML = document.getElementById('city').value;
     temperatureElement.innerHTML = Math.floor(dataSet.main.temp) + '&#176C';
     windSpeedElement.innerHTML = "<img src='icons/wind.png'/>" + Math.floor(dataSet.wind.speed) + ' m/s';
     humidityElement.innerHTML = "<img src='icons/humidity.png'/>" + Math.floor(dataSet.main.humidity) + ' %';
