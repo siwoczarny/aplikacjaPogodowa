@@ -64,7 +64,7 @@ function init(dataSet) {
     let resultsDescription = dataSet.weather[0].description;
     weatherType.innerHTML = resultsDescription.charAt(0).toUpperCase() + resultsDescription.slice(1);
 
-    cityName.innerHTML = document.getElementById('city').value;
+    cityName.innerHTML = dataSet.name;
     temperatureElement.innerHTML = Math.floor(dataSet.main.temp) + '&#176C';
     windSpeedElement.innerHTML = "<img src='icons/wind.png'/>" + Math.floor(dataSet.wind.speed) + ' m/s';
     humidityElement.innerHTML = "<img src='icons/humidity.png'/>" + Math.floor(dataSet.main.humidity) + ' %';
